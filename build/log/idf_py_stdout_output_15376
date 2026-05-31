@@ -1,0 +1,478 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378cda
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0daf4h ( 56052) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001db1c vaddr=3fc93c00 size=024fch (  9468) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=257a0h (153504) map[0m
+[0;32mI (148) esp_image: segment 3: paddr=000457c8 vaddr=3fc960fc size=00944h (  2372) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046114 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=00055c50 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (210) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (216) cpu_start: ELF file SHA256:  2809f449b...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (231) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (236) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (248) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (254) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (260) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (281) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (301) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3548) MODEM: Modem init OK[0m
+[0;32mI (3648) MODEM: GNSS started[0m
+[0;32mI (3648) MODEM: Attaching to LTE...[0m
+[0;33mW (3748) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (3798) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.187.145"
+
+OK
+[0m
+[0;32mI (3848) MODEM: Network DNS: 
++QIDNSCFG: 1,"8.8.8.8","8.8.4.4"
+
+OK
+[0m
+[0;32mI (3898) MODEM: Time synced — epoch=1779968510000 ms[0m
+[0;32mI (5178) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (5178) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (16198) MODEM: TLS configured[0m
+[0;32mI (19658) ACCEL: Pothole! severity=LOW peak=1.51g (x=1.51 y=0.01 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (21678) ACCEL: Pothole! severity=LOW peak=1.64g (x=1.63 y=-0.11 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (23678) ACCEL: Pothole! severity=LOW peak=1.73g (x=1.73 y=0.01 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (25698) ACCEL: Pothole! severity=LOW peak=1.55g (x=1.55 y=0.01 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (27708) ACCEL: Pothole! severity=LOW peak=2.13g (x=-2.13 y=0.01 z=0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (29718) ACCEL: Pothole! severity=LOW peak=1.92g (x=1.92 y=0.01 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (30608) MODEM: QMTOPEN result=4[0m
+[0;32mI (31728) ACCEL: Pothole! severity=MEDIUM peak=2.97g (x=-2.97 y=0.00 z=0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (33728) ACCEL: Pothole! severity=MEDIUM peak=3.21g (x=-3.20 y=-0.21 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (35608) MODEM: Attaching to LTE...[0m
+[0;33mW (35708) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (35748) ACCEL: Pothole! severity=HIGH peak=3.54g (x=-3.54 y=0.01 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (35758) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.164.18"
+
+OK
+[0m
+[0;32mI (35808) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (35858) MODEM: Time synced — epoch=1779968542000 ms[0m
+[0;32mI (37208) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (37208) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (37748) ACCEL: Pothole! severity=MEDIUM peak=3.47g (x=-3.47 y=0.12 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (39748) ACCEL: Pothole! severity=MEDIUM peak=3.29g (x=-3.27 y=-0.36 z=0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (41768) ACCEL: Pothole! severity=MEDIUM peak=3.18g (x=-3.18 y=0.07 z=-0.04) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (43768) ACCEL: Pothole! severity=MEDIUM peak=3.34g (x=-3.34 y=0.02 z=0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (45768) ACCEL: Pothole! severity=MEDIUM peak=3.33g (x=-3.33 y=0.02 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (47768) ACCEL: Pothole! severity=MEDIUM peak=3.22g (x=-3.22 y=-0.00 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (48228) MODEM: TLS configured[0m
+[0;32mI (49788) ACCEL: Pothole! severity=MEDIUM peak=3.20g (x=-3.20 y=0.06 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (51788) ACCEL: Pothole! severity=MEDIUM peak=3.40g (x=-3.40 y=0.06 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (53808) ACCEL: Pothole! severity=MEDIUM peak=3.02g (x=-3.02 y=0.04 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (55808) ACCEL: Pothole! severity=MEDIUM peak=3.08g (x=-3.08 y=0.10 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (57808) ACCEL: Pothole! severity=MEDIUM peak=3.03g (x=-3.02 y=-0.18 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (59808) ACCEL: Pothole! severity=MEDIUM peak=2.59g (x=-2.58 y=-0.23 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (61828) ACCEL: Pothole! severity=LOW peak=2.35g (x=-2.35 y=-0.10 z=0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (62648) MODEM: QMTOPEN result=4[0m
+[0;32mI (63848) ACCEL: Pothole! severity=LOW peak=1.76g (x=-1.75 y=-0.15 z=0.12) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (66148) ACCEL: Pothole! severity=LOW peak=1.51g (x=-1.51 y=-0.09 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (67648) MODEM: Attaching to LTE...[0m
+[0;33mW (67748) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (67798) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.164.141"
+
+OK
+[0m
+[0;32mI (67848) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (67898) MODEM: Time synced — epoch=1779968574000 ms[0m
+[0;32mI (69098) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (69098) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (69098) ACCEL: Pothole! severity=LOW peak=1.84g (x=-1.84 y=-0.05 z=-0.06) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (71118) ACCEL: Pothole! severity=LOW peak=2.01g (x=-2.01 y=0.04 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (73118) ACCEL: Pothole! severity=MEDIUM peak=2.67g (x=-2.67 y=-0.12 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (75118) ACCEL: Pothole! severity=MEDIUM peak=2.92g (x=-2.91 y=-0.18 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (77138) ACCEL: Pothole! severity=MEDIUM peak=2.95g (x=-2.94 y=0.12 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (79158) ACCEL: Pothole! severity=MEDIUM peak=3.28g (x=-3.28 y=-0.19 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (80118) MODEM: TLS configured[0m
+[0;32mI (81178) ACCEL: Pothole! severity=MEDIUM peak=3.41g (x=-3.41 y=0.12 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (83198) ACCEL: Pothole! severity=HIGH peak=3.68g (x=-3.45 y=-0.07 z=-1.26) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (85198) ACCEL: Pothole! severity=HIGH peak=5.43g (x=-5.43 y=0.13 z=0.06) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (87208) ACCEL: Pothole! severity=LOW peak=1.94g (x=1.93 y=0.11 z=0.05) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (89218) ACCEL: Pothole! severity=HIGH peak=4.69g (x=-4.69 y=0.11 z=0.04) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200F86A:0x3FC94BE0 0x4200FE40:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x42003066:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x42003066:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 2809f449b
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200f875
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0daf4h ( 56052) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001db1c vaddr=3fc93c00 size=024fch (  9468) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=257a0h (153504) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=000457c8 vaddr=3fc960fc size=00944h (  2372) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046114 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=00055c50 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  2809f449b...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (2358) ACCEL: Pothole! severity=MEDIUM peak=2.63g (x=-2.63 y=0.01 z=0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3548) MODEM: Modem init OK[0m
+[0;32mI (3648) MODEM: GNSS started[0m
+[0;32mI (3648) MODEM: Attaching to LTE...[0m
+[0;33mW (3748) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (3798) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.164.146"
+
+OK
+[0m
+[0;32mI (3848) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (3898) MODEM: Time synced — epoch=1779968601000 ms[0m
+[0;32mI (4368) ACCEL: Pothole! severity=HIGH peak=3.96g (x=3.96 y=0.00 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (5068) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (5068) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (6378) ACCEL: Pothole! severity=LOW peak=1.77g (x=-1.77 y=-0.01 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (8388) ACCEL: Pothole! severity=HIGH peak=4.10g (x=4.10 y=0.00 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (10388) ACCEL: Pothole! severity=HIGH peak=3.80g (x=3.80 y=-0.12 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (12388) ACCEL: Pothole! severity=HIGH peak=3.55g (x=3.55 y=-0.15 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (14408) ACCEL: Pothole! severity=LOW peak=2.50g (x=2.49 y=-0.17 z=-0.05) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (16088) MODEM: TLS configured[0m
+[0;32mI (16408) ACCEL: Pothole! severity=LOW peak=2.05g (x=2.05 y=-0.11 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (18738) ACCEL: Pothole! severity=LOW peak=1.74g (x=1.73 y=-0.16 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (20738) ACCEL: Pothole! severity=MEDIUM peak=2.65g (x=2.65 y=-0.09 z=-0.04) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (22738) ACCEL: Pothole! severity=LOW peak=2.50g (x=2.50 y=-0.09 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (24738) ACCEL: Pothole! severity=LOW peak=2.49g (x=2.49 y=0.03 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (26738) ACCEL: Pothole! severity=LOW peak=1.67g (x=1.67 y=-0.05 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (30528) MODEM: QMTOPEN result=4[0m
+[0;32mI (35528) MODEM: Attaching to LTE...[0m
+[0;33mW (35628) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (35678) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.164.128"
+
+OK
+[0m
+[0;32mI (35728) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (35778) MODEM: Time synced — epoch=1779968633000 ms[0m
+[0;32mI (36948) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (36948) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (38688) ACCEL: Pothole! severity=LOW peak=1.56g (x=1.56 y=0.02 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (40708) ACCEL: Pothole! severity=LOW peak=1.62g (x=1.62 y=0.04 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (47968) MODEM: TLS configured[0m
+[0;32mI (52638) ACCEL: Pothole! severity=LOW peak=1.52g (x=1.52 y=0.02 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (61158) ACCEL: Pothole! severity=LOW peak=1.52g (x=-1.51 y=-0.08 z=0.04) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (62388) MODEM: QMTOPEN result=4[0m
+[0;32mI (63168) ACCEL: Pothole! severity=LOW peak=1.68g (x=1.68 y=0.04 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (67388) MODEM: Attaching to LTE...[0m
+[0;33mW (67488) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (67538) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.190.101"
+
+OK
+[0m
+[0;32mI (67588) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (67638) MODEM: Time synced — epoch=1779968664000 ms[0m
+[0;32mI (68808) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (68808) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (72238) ACCEL: Pothole! severity=LOW peak=1.54g (x=1.54 y=0.04 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (79828) MODEM: TLS configured[0m
+[0;32mI (81448) ACCEL: Pothole! severity=LOW peak=1.52g (x=1.52 y=0.03 z=0.13) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (88738) ACCEL: Pothole! severity=LOW peak=1.51g (x=1.51 y=0.06 z=0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200F86A:0x3FC94BE0 0x4200FE40:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x42003066:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x42003066:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 2809f449b
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200f875
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0daf4h ( 56052) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001db1c vaddr=3fc93c00 size=024fch (  9468) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=257a0h (153504) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=000457c8 vaddr=3fc960fc size=00944h (  2372) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046114 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=00055c50 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  2809f449b...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3548) MODEM: Modem init OK[0m
+[0;32mI (3648) MODEM: GNSS started[0m
+[0;32mI (3648) MODEM: Attaching to LTE...[0m
+[0;33mW (3748) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (3838) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.164.24"
+
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;32mI (3888) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (3938) MODEM: Time synced — epoch=1779968691000 ms[0m
+[0;32mI (5128) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (5128) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (7378) ACCEL: Pothole! severity=LOW peak=1.54g (x=-1.54 y=-0.04 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (9378) ACCEL: Pothole! severity=LOW peak=1.95g (x=-1.95 y=-0.06 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (11388) ACCEL: Pothole! severity=LOW peak=1.65g (x=1.64 y=0.06 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (16148) MODEM: TLS configured[0m
+[0;32mI (16808) ACCEL: Pothole! severity=LOW peak=1.52g (x=-1.52 y=-0.07 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (18808) ACCEL: Pothole! severity=LOW peak=1.62g (x=-1.61 y=-0.05 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (24198) ACCEL: Pothole! severity=LOW peak=1.53g (x=-1.53 y=-0.03 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (26198) ACCEL: Pothole! severity=LOW peak=1.90g (x=-1.90 y=-0.07 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (28208) ACCEL: Pothole! severity=LOW peak=1.77g (x=1.77 y=0.05 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (30588) MODEM: QMTOPEN result=4[0m
+[0;32mI (33128) ACCEL: Pothole! severity=LOW peak=1.53g (x=-1.52 y=-0.04 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (35138) ACCEL: Pothole! severity=LOW peak=1.90g (x=1.90 y=0.08 z=0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (35588) MODEM: Attaching to LTE...[0m
+[0;33mW (35688) MODEM: QIACT failed, trying anyway: 
+ERROR
+[0m
+[0;32mI (35738) MODEM: LTE attached — 
++QIACT: 1,1,1,"100.84.187.140"
+
+OK
+[0m
+[0;32mI (35788) MODEM: Network DNS: 
++QIDNSCFG: 1,"117.96.122.47","117.96.122.150"
+
+OK
+[0m
+[0;32mI (35838) MODEM: Time synced — epoch=1779968723000 ms[0m
+[0;32mI (37008) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (37008) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (41198) ACCEL: Pothole! severity=LOW peak=1.63g (x=-1.62 y=-0.05 z=-0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (48028) MODEM: TLS configured[0m
+[0;32mI (54058) ACCEL: Pothole! severity=LOW peak=2.10g (x=2.02 y=0.58 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (56058) ACCEL: Pothole! severity=LOW peak=1.71g (x=1.70 y=0.07 z=0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (60798) ACCEL: Pothole! severity=LOW peak=1.55g (x=-1.55 y=-0.01 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (62588) MODEM: QMTOPEN result=4[0m
+[0;32mI (62798) ACCEL: Pothole! severity=LOW peak=2.19g (x=-2.19 y=-0.05 z=0.08) gps=NO lat=0.000000 lng=0.000000[0m

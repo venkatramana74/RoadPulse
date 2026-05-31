@@ -1,0 +1,1636 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378cda
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (148) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (149) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (210) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (216) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (231) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (236) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (248) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (254) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (260) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (281) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (301) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029321000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;31mE (44568) MODEM: QMTOPEN result=4[0m
+[0;32mI (49568) MODEM: Attaching to LTE...[0m
+[0;32mI (49668) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49718) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50818) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50878) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50938) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65118) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65168) MODEM: Time synced — epoch=1780029367000 ms[0m
+[0;32mI (65168) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65168) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76158) MODEM: TLS configured[0m
+[0;31mE (90338) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029412000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;31mE (44568) MODEM: QMTOPEN result=4[0m
+[0;32mI (49568) MODEM: Attaching to LTE...[0m
+[0;32mI (49668) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49718) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50818) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50878) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50938) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65118) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65168) MODEM: Time synced — epoch=1780029457000 ms[0m
+[0;32mI (65168) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65168) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76138) MODEM: TLS configured[0m
+[0;31mE (90318) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029502000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30478) MODEM: TLS configured[0m
+[0;31mE (44658) MODEM: QMTOPEN result=4[0m
+[0;32mI (49658) MODEM: Attaching to LTE...[0m
+[0;32mI (49758) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49808) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50908) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50968) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (51028) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65208) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65258) MODEM: Time synced — epoch=1780029548000 ms[0m
+[0;32mI (65258) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65258) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76228) MODEM: TLS configured[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029592000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;31mE (44578) MODEM: QMTOPEN result=4[0m
+[0;32mI (49578) MODEM: Attaching to LTE...[0m
+[0;32mI (49678) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49728) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50828) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50888) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50948) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65128) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65178) MODEM: Time synced — epoch=1780029638000 ms[0m
+[0;32mI (65178) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65178) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76248) MODEM: TLS configured[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029683000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;31mE (44568) MODEM: QMTOPEN result=4[0m
+[0;32mI (49568) MODEM: Attaching to LTE...[0m
+[0;32mI (49668) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49718) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50818) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50878) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50938) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65118) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65168) MODEM: Time synced — epoch=1780029729000 ms[0m
+[0;32mI (65168) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65168) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76138) MODEM: TLS configured[0m
+[0;31mE (90328) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (2628) ACCEL: Pothole! severity=LOW peak=1.83g (x=0.06 y=-1.83 z=0.07) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029773000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (24558) ACCEL: Pothole! severity=LOW peak=1.70g (x=0.01 y=-1.69 z=0.14) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;32mI (35568) ACCEL: Pothole! severity=LOW peak=1.53g (x=0.04 y=-1.52 z=0.06) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (37738) ACCEL: Pothole! severity=LOW peak=1.91g (x=-0.01 y=-1.91 z=0.08) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (44568) MODEM: QMTOPEN result=4[0m
+[0;32mI (49568) MODEM: Attaching to LTE...[0m
+[0;32mI (49668) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49718) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50818) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50878) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50938) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65118) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65168) MODEM: Time synced — epoch=1780029819000 ms[0m
+[0;32mI (65168) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65168) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (71218) ACCEL: Pothole! severity=LOW peak=1.80g (x=-0.02 y=-1.80 z=0.01) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (75918) ACCEL: Pothole! severity=LOW peak=1.78g (x=0.13 y=-1.73 z=-0.39) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (76138) MODEM: TLS configured[0m
+[0;32mI (78988) ACCEL: Pothole! severity=LOW peak=1.61g (x=-0.91 y=1.26 z=0.43) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (80988) ACCEL: Pothole! severity=LOW peak=1.58g (x=-0.81 y=1.35 z=-0.07) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (83358) ACCEL: Pothole! severity=LOW peak=1.87g (x=-0.15 y=-1.74 z=-0.68) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (89108) ACCEL: Pothole! severity=LOW peak=2.05g (x=-2.03 y=0.22 z=-0.23) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (90318) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3728) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3728) MODEM: Modem init OK[0m
+[0;32mI (3828) MODEM: GNSS started[0m
+[0;32mI (3828) MODEM: Attaching to LTE...[0m
+[0;32mI (3928) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3978) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5078) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5138) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5198) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19378) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19428) MODEM: Time synced — epoch=1780029864000 ms[0m
+[0;32mI (19428) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19428) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30398) MODEM: TLS configured[0m
+[0;31mE (44578) MODEM: QMTOPEN result=4[0m
+[0;32mI (49578) MODEM: Attaching to LTE...[0m
+[0;32mI (49678) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49728) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50828) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50888) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50948) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65128) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65178) MODEM: Time synced — epoch=1780029909000 ms[0m
+[0;32mI (65178) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65178) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76148) MODEM: TLS configured[0m
+[0;31mE (90328) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5188) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (19368) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19418) MODEM: Time synced — epoch=1780029954000 ms[0m
+[0;32mI (19418) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19418) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30388) MODEM: TLS configured[0m
+[0;31mE (44568) MODEM: QMTOPEN result=4[0m
+[0;32mI (49568) MODEM: Attaching to LTE...[0m
+[0;32mI (49668) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49718) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50818) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50878) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50938) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65118) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65168) MODEM: Time synced — epoch=1780030000000 ms[0m
+[0;32mI (65168) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65168) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (76248) MODEM: TLS configured[0m
+[0;32mI (85228) ACCEL: Pothole! severity=LOW peak=1.65g (x=-0.04 y=-1.65 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (89188) ACCEL: Pothole! severity=LOW peak=1.73g (x=-0.22 y=1.56 z=-0.70) gps=NO lat=0.000000 lng=0.000000[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3228) ACCEL: Pothole! severity=LOW peak=1.54g (x=0.01 y=-1.50 z=-0.34) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3928) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3978) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5078) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5138) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5198) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (5358) ACCEL: Pothole! severity=LOW peak=2.30g (x=-0.11 y=2.07 z=-0.99) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (7388) ACCEL: Pothole! severity=LOW peak=1.72g (x=-1.36 y=-0.42 z=-0.96) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (9558) ACCEL: Pothole! severity=LOW peak=1.65g (x=1.07 y=-0.71 z=-1.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (11558) ACCEL: Pothole! severity=LOW peak=2.02g (x=-1.69 y=1.03 z=-0.41) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (13558) ACCEL: Pothole! severity=MEDIUM peak=3.28g (x=0.84 y=3.14 z=-0.45) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (15648) ACCEL: Pothole! severity=LOW peak=1.70g (x=-1.06 y=1.04 z=-0.82) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (17658) ACCEL: Pothole! severity=LOW peak=1.54g (x=-0.65 y=-1.26 z=-0.60) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (19378) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19428) MODEM: Time synced — epoch=1780030044000 ms[0m
+[0;32mI (19428) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19428) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (19758) ACCEL: Pothole! severity=LOW peak=1.66g (x=-0.63 y=1.42 z=0.57) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (21858) ACCEL: Pothole! severity=LOW peak=1.52g (x=-1.45 y=-0.43 z=0.04) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (25518) ACCEL: Pothole! severity=LOW peak=1.58g (x=-0.03 y=-1.55 z=-0.26) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (30398) MODEM: TLS configured[0m
+[0;31mE (44578) MODEM: QMTOPEN result=4[0m
+[0;32mI (49578) MODEM: Attaching to LTE...[0m
+[0;32mI (49678) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49728) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (50828) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50888) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50948) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (65128) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (65178) MODEM: Time synced — epoch=1780030090000 ms[0m
+[0;32mI (65178) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (65178) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (74588) ACCEL: Pothole! severity=LOW peak=1.59g (x=0.01 y=-1.59 z=-0.00) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (76148) MODEM: TLS configured[0m
+[0;31mE (90328) MODEM: QMTOPEN result=4[0m
+[0;31mE (90348) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (90348) task_wdt:  - publish (CPU 0/1)[0m
+[0;31mE (90348) task_wdt: Tasks currently running:[0m
+[0;31mE (90348) task_wdt: CPU 0: IDLE0[0m
+[0;31mE (90348) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (90348) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200FAD6:0x3FC94BE0 0x420100AC:0x3FC94C00 0x40377349:0x3FC94C30 0x40378CD7:0x3FC9BD90 0x420030AA:0x3FC9BDB0 0x4037CFC5:0x3FC9BDD0 0x4037BF89:0x3FC9BDF0
+
+[0;31mE (90348) task_wdt: Aborting.[0m
+[0;31mE (90348) task_wdt: Print CPU 1 backtrace[0m
+
+
+
+
+Backtrace: 0x40378cd7:0x3fc9c4f0 0x420030aa:0x3fc9c510 0x4037cfc5:0x3fc9c530 0x4037bf89:0x3fc9c550
+
+
+
+
+ELF file SHA256: 4e84509d6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4200fae1
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0dcf4h ( 56564) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001dd1c vaddr=3fc93c00 size=022fch (  8956) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25a0ch (154124) map[0m
+[0;32mI (147) esp_image: segment 3: paddr=00045a34 vaddr=3fc95efc size=00b44h (  2884) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00046580 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=000560bc vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (174) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (209) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (215) cpu_start: ELF file SHA256:  4e84509d6...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (230) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (235) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (253) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (259) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (294) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (300) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (358) MAIN: All tasks launched[0m
+[0;32mI (358) main_task: Returned from app_main()[0m
+[0;32mI (3278) ACCEL: Pothole! severity=LOW peak=1.63g (x=-0.04 y=-1.63 z=-0.02) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3728) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3728) MODEM: Modem init OK[0m
+[0;32mI (3828) MODEM: GNSS started[0m
+[0;32mI (3828) MODEM: Attaching to LTE...[0m
+[0;32mI (3928) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3978) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5078) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (5138) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5198) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (5278) ACCEL: Pothole! severity=LOW peak=1.54g (x=0.01 y=-1.54 z=0.11) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (19378) MODEM: PING amazon.com (after DNS fix): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (19428) MODEM: Time synced — epoch=1780030135000 ms[0m
+[0;32mI (19428) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (19428) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (30398) MODEM: TLS configured[0m
+[0;31mE (44578) MODEM: QMTOPEN result=4[0m
+[0;32mI (49578) MODEM: Attaching to LTE...[0m
+[0;32mI (49678) MODEM: Waiting for LTE registration...[0m
+[0;32mI (49728) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (49938) ACCEL: Pothole! severity=LOW peak=1.75g (x=-1.75 y=0.02 z=0.06) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (50828) MODEM: IP: 
++QIACT: 1,1,1,"100.74.184.29"
+
+OK
+[0m
+[0;32mI (50888) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.74.184.29.255.255.255.0","100.74.184.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (50948) MODEM: DNS set to Airtel fallback[0m
+[0;32mI (51938) ACCEL: Pothole! severity=HIGH peak=5.99g (x=-3.76 y=-2.76 z=-3.76) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (53938) ACCEL: Pothole! severity=HIGH peak=5.39g (x=-3.37 y=-2.49 z=-3.39) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (55948) ACCEL: Pothole! severity=HIGH peak=4.84g (x=-3.03 y=-2.21 z=-3.06) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (57948) ACCEL: Pothole! severity=HIGH peak=4.41g (x=-2.76 y=-2.02 z=-2.78) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (59948) ACCEL: Pothole! severity=HIGH peak=4.00g (x=-2.50 y=-1.84 z=-2.52) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (61948) ACCEL: Pothole! severity=HIGH peak=3.64g (x=-2.28 y=-1.70 z=-2.27) gps=NO lat=0.000000 lng=0.000000[0m

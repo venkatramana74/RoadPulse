@@ -1,0 +1,253 @@
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c03002ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378cda
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0e2d4h ( 58068) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001e2fc vaddr=3fc93c00 size=01d1ch (  7452) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=263cch (156620) map[0m
+[0;32mI (148) esp_image: segment 3: paddr=000463f4 vaddr=3fc9591c size=01124h (  4388) load[0m
+[0;32mI (149) esp_image: segment 4: paddr=00047520 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (168) esp_image: segment 5: paddr=0005705c vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (175) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (175) boot: Disabling RNG early entropy source...[0m
+[0;32mI (188) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (198) cpu_start: Application information:[0m
+[0;32mI (201) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (206) cpu_start: App version:      1[0m
+[0;32mI (210) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (216) cpu_start: ELF file SHA256:  09e492823...[0m
+[0;32mI (222) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (227) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (231) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (236) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (248) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (254) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (260) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (281) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (301) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (319) main_task: Calling app_main()[0m
+[0;32mI (319) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (329) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (329) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (339) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (349) MODEM: Waiting for modem to boot...[0m
+[0;32mI (349) MODEM: GPS task: waiting for modem init to complete...[0m
+[0;32mI (359) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (369) MAIN: All tasks launched[0m
+[0;32mI (369) main_task: Returned from app_main()[0m
+[0;32mI (3399) MODEM: Modem responding to AT[0m
+[0;32mI (3609) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3659) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3719) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3719) MODEM: Modem init OK[0m
+[0;32mI (3819) MODEM: GNSS started[0m
+[0;32mI (3819) MODEM: Attaching to LTE...[0m
+[0;32mI (3919) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3969) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;33mW (4019) MODEM: QIACT activate failed, checking existing PDP state: 
+ERROR
+[0m
+[0;32mI (5069) MODEM: IP: 
++QIACT: 1,1,1,"100.84.187.76"
+
+OK
+[0m
+[0;32mI (5129) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.187.76.255.255.255.0","100.84.187.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5239) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (5289) MODEM: Signal (CSQ): 
++CSQ: 22,99
+
+OK
+[0m
+[0;32mI (5339) MODEM: Operator: 
++COPS: 0,0,"IND airtel",7
+
+OK
+[0m
+[0;32mI (5579) MODEM: PING 8.8.8.8 (IP): 
+OK
+
++QPING: 0,"8.8.8.8",64,57,255
+
++QPING: 0,1,1,0,57,57,57
+[0m
+[0;32mI (19759) MODEM: PING amazon.com (DNS): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (33939) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (33939) MODEM: IP routing OK — data plan active[0m
+[0;32mI (33989) MODEM: Time synced — epoch=1780051379000 ms[0m
+[0;32mI (33989) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (33989) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;31mE (44969) MODEM: SSL config failed: AT+QSSLCFG="alpn",2,1,"x-amzn-mqtt-ca" -> 
+ERROR
+[0m
+[0;31mE (44969) MODEM: TLS config failed[0m
+[0;32mI (49969) MODEM: Attaching to LTE...[0m
+[0;32mI (50069) MODEM: Waiting for LTE registration...[0m
+[0;32mI (50119) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;33mW (50169) MODEM: QIACT activate failed, checking existing PDP state: 
+ERROR
+[0m
+[0;32mI (51219) MODEM: IP: 
++QIACT: 1,1,1,"100.84.187.76"
+
+OK
+[0m
+[0;32mI (51279) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.187.76.255.255.255.0","100.84.187.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (51389) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (51439) MODEM: Signal (CSQ): 
++CSQ: 23,99
+
+OK
+[0m
+[0;32mI (51489) MODEM: Operator: 
++COPS: 0,0,"IND airtel",7
+
+OK
+[0m
+[0;32mI (51819) MODEM: PING 8.8.8.8 (IP): 
+OK
+
++QPING: 0,"8.8.8.8",64,153,255
+
++QPING: 0,1,1,0,153,153,153
+[0m
+[0;32mI (65999) MODEM: PING amazon.com (DNS): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (80179) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (80179) MODEM: IP routing OK — data plan active[0m
+[0;32mI (80229) MODEM: Time synced — epoch=1780051425000 ms[0m
+[0;32mI (80229) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (80229) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;31mE (91199) MODEM: SSL config failed: AT+QSSLCFG="alpn",2,1,"x-amzn-mqtt-ca" -> 
+ERROR
+[0m
+[0;31mE (91199) MODEM: TLS config failed[0m
+[0;32mI (94359) MODEM: GPS task: polling started[0m
+[0;32mI (94419) MODEM: GPS fix: lat=17.309460  lng=78.591780  speed=0.9 km/h[0m
+[0;32mI (96199) MODEM: Attaching to LTE...[0m
+[0;32mI (96299) MODEM: Waiting for LTE registration...[0m
+[0;32mI (96349) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;33mW (96399) MODEM: QIACT activate failed, checking existing PDP state: 
+ERROR
+[0m
+[0;32mI (97449) MODEM: IP: 
++QIACT: 1,1,1,"100.84.187.76"
+
+OK
+[0m
+[0;32mI (97509) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.187.76.255.255.255.0","100.84.187.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (97619) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (97669) MODEM: Signal (CSQ): 
++CSQ: 23,99
+
+OK
+[0m
+[0;32mI (97719) MODEM: Operator: 
++COPS: 0,0,"IND airtel",7
+
+OK
+[0m
+[0;32mI (98039) MODEM: PING 8.8.8.8 (IP): 
+OK
+
++QPING: 0,"8.8.8.8",64,137,255
+
++QPING: 0,1,1,0,137,137,137
+[0m
+[0;32mI (112219) MODEM: PING amazon.com (DNS): 
+OK
+
++QPING: 565
+[0m
+[0;32mI (112279) MODEM: GPS fix: lat=17.309470  lng=78.591770  speed=0.4 km/h[0m
+[0;32mI (126459) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (126459) MODEM: IP routing OK — data plan active[0m
+[0;32mI (126519) MODEM: GPS fix: lat=17.309480  lng=78.591770  speed=0.6 km/h[0m
+[0;32mI (126569) MODEM: Time synced — epoch=1780051471000 ms[0m
+[0;32mI (126569) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (126569) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m

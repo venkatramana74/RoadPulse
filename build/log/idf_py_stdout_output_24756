@@ -1,0 +1,411 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378cda
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0df54h ( 57172) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001df7c vaddr=3fc93c00 size=0209ch (  8348) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=25c10h (154640) map[0m
+[0;32mI (148) esp_image: segment 3: paddr=00045c38 vaddr=3fc95c9c size=00da4h (  3492) load[0m
+[0;32mI (149) esp_image: segment 4: paddr=000469e4 vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (167) esp_image: segment 5: paddr=00056520 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (174) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (175) boot: Disabling RNG early entropy source...[0m
+[0;32mI (187) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (197) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (197) cpu_start: Application information:[0m
+[0;32mI (200) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (205) cpu_start: App version:      1[0m
+[0;32mI (210) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (216) cpu_start: ELF file SHA256:  99877c56e...[0m
+[0;32mI (221) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (226) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (231) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (236) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (248) heap_init: At 3FC97A00 len 00051D10 (327 KiB): RAM[0m
+[0;32mI (254) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (260) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (281) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (301) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (308) main_task: Started on CPU0[0m
+[0;32mI (318) main_task: Calling app_main()[0m
+[0;32mI (318) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (328) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (328) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (338) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (348) MODEM: Waiting for modem to boot...[0m
+[0;32mI (348) MODEM: GPS task: waiting for modem init to complete...[0m
+[0;32mI (358) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (368) MAIN: All tasks launched[0m
+[0;32mI (368) main_task: Returned from app_main()[0m
+[0;32mI (3398) MODEM: Modem responding to AT[0m
+[0;32mI (3608) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3658) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3718) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3718) MODEM: Modem init OK[0m
+[0;32mI (3818) MODEM: GNSS started[0m
+[0;32mI (3818) MODEM: Attaching to LTE...[0m
+[0;32mI (3918) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3968) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (5068) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (5128) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (5238) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (19418) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (26848) ACCEL: Pothole! severity=LOW peak=1.80g (x=-1.64 y=0.11 z=-0.72) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (28988) ACCEL: Pothole! severity=LOW peak=1.51g (x=-1.36 y=0.29 z=0.60) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (31708) ACCEL: Pothole! severity=LOW peak=2.35g (x=-2.07 y=-0.76 z=0.82) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (33598) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (33648) MODEM: Time synced — epoch=1780038886000 ms[0m
+[0;32mI (33648) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (33648) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (33798) ACCEL: Pothole! severity=LOW peak=1.80g (x=-1.09 y=1.19 z=-0.79) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (36318) ACCEL: Pothole! severity=LOW peak=1.54g (x=-0.89 y=0.59 z=1.12) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (38338) ACCEL: Pothole! severity=LOW peak=1.59g (x=-1.57 y=0.13 z=-0.19) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (44808) MODEM: TLS configured[0m
+[0;32mI (45358) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (47398) ACCEL: Pothole! severity=HIGH peak=4.46g (x=3.20 y=2.97 z=0.92) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (55788) ACCEL: Pothole! severity=MEDIUM peak=2.90g (x=2.20 y=-1.47 z=-1.19) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (57828) ACCEL: Pothole! severity=LOW peak=1.56g (x=-0.67 y=-1.35 z=0.38) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (59538) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (59538) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (61308) ACCEL: Pothole! severity=LOW peak=1.81g (x=1.59 y=0.39 z=0.76) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (64538) MODEM: Attaching to LTE...[0m
+[0;32mI (64638) MODEM: Waiting for LTE registration...[0m
+[0;32mI (64688) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (65788) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (65848) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (65958) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (71758) ACCEL: Pothole! severity=LOW peak=1.50g (x=-1.30 y=0.77 z=-0.03) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (79368) ACCEL: Pothole! severity=LOW peak=1.69g (x=-0.67 y=-1.51 z=0.34) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (80138) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (84718) ACCEL: Pothole! severity=LOW peak=1.52g (x=-1.50 y=0.06 z=-0.20) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (86728) ACCEL: Pothole! severity=LOW peak=1.57g (x=-0.55 y=1.44 z=0.27) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (88978) ACCEL: Pothole! severity=LOW peak=1.74g (x=-0.97 y=1.27 z=-0.69) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (91658) ACCEL: Pothole! severity=MEDIUM peak=2.59g (x=-1.88 y=1.36 z=-1.15) gps=NO lat=0.000000 lng=0.000000[0m
+[0;32mI (94318) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (94358) MODEM: GPS task: polling started[0m
+[0;32mI (94368) MODEM: Time synced — epoch=1780038947000 ms[0m
+[0;32mI (94368) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (94368) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (94428) MODEM: GPS fix: lat=17.309430  lng=78.591820  speed=0.7 km/h[0m
+[0;32mI (99488) MODEM: GPS fix: lat=17.309430  lng=78.591810  speed=0.4 km/h[0m
+[0;32mI (104548) MODEM: GPS fix: lat=17.309430  lng=78.591810  speed=0.1 km/h[0m
+[0;32mI (105488) MODEM: TLS configured[0m
+[0;32mI (106038) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (106438) ACCEL: Pothole! severity=LOW peak=1.80g (x=-0.44 y=-1.73 z=0.22) gps=YES lat=17.309430 lng=78.591810[0m
+[0;32mI (108998) ACCEL: Pothole! severity=LOW peak=1.55g (x=-0.63 y=1.40 z=0.24) gps=YES lat=17.309430 lng=78.591810[0m
+[0;32mI (119118) ACCEL: Pothole! severity=LOW peak=1.83g (x=-0.84 y=-1.53 z=-0.55) gps=YES lat=17.309430 lng=78.591810[0m
+[0;32mI (120218) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (120218) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (120278) MODEM: GPS fix: lat=17.309420  lng=78.591810  speed=0.1 km/h[0m
+[0;32mI (125218) MODEM: Attaching to LTE...[0m
+[0;32mI (125318) MODEM: Waiting for LTE registration...[0m
+[0;32mI (125378) MODEM: GPS fix: lat=17.309420  lng=78.591810  speed=0.3 km/h[0m
+[0;32mI (125428) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (126528) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (126588) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (126698) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (135898) ACCEL: Pothole! severity=LOW peak=1.66g (x=-0.84 y=-1.43 z=-0.08) gps=YES lat=17.309420 lng=78.591810[0m
+[0;32mI (140878) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (140938) MODEM: GPS fix: lat=17.309420  lng=78.591810  speed=0.0 km/h[0m
+[0;32mI (144318) ACCEL: Pothole! severity=HIGH peak=5.44g (x=2.37 y=4.67 z=1.45) gps=YES lat=17.309420 lng=78.591810[0m
+[0;32mI (155118) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (155178) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.5 km/h[0m
+[0;32mI (155228) MODEM: Time synced — epoch=1780039008000 ms[0m
+[0;32mI (155228) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (155228) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (160238) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.2 km/h[0m
+[0;32mI (165298) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.5 km/h[0m
+[0;32mI (166298) MODEM: TLS configured[0m
+[0;32mI (166848) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (181028) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (181028) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (181088) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.3 km/h[0m
+[0;32mI (186028) MODEM: Attaching to LTE...[0m
+[0;32mI (186128) MODEM: Waiting for LTE registration...[0m
+[0;32mI (186188) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.4 km/h[0m
+[0;32mI (186238) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (187338) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (187398) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (187508) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (201688) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (201748) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.2 km/h[0m
+[0;32mI (215928) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (215988) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.1 km/h[0m
+[0;32mI (216038) MODEM: Time synced — epoch=1780039068000 ms[0m
+[0;32mI (216038) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (216038) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (221048) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.2 km/h[0m
+[0;32mI (226108) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.4 km/h[0m
+[0;32mI (227108) MODEM: TLS configured[0m
+[0;32mI (227658) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (241838) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (241838) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (241898) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.3 km/h[0m
+[0;32mI (246838) MODEM: Attaching to LTE...[0m
+[0;32mI (246938) MODEM: Waiting for LTE registration...[0m
+[0;32mI (246998) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.4 km/h[0m
+[0;32mI (247048) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (248148) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (248208) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (248318) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (262498) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (262558) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.2 km/h[0m
+[0;32mI (276738) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (276798) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.2 km/h[0m
+[0;32mI (276848) MODEM: Time synced — epoch=1780039129000 ms[0m
+[0;32mI (276848) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (276848) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (281858) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.3 km/h[0m
+[0;32mI (286918) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.4 km/h[0m
+[0;32mI (287918) MODEM: TLS configured[0m
+[0;32mI (288468) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (302658) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (302658) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (302718) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.0 km/h[0m
+[0;32mI (307658) MODEM: Attaching to LTE...[0m
+[0;32mI (307758) MODEM: Waiting for LTE registration...[0m
+[0;32mI (307818) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.3 km/h[0m
+[0;32mI (307868) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (308968) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (309028) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (309138) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (323318) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (323378) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.1 km/h[0m
+[0;32mI (337558) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (337618) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.3 km/h[0m
+[0;32mI (337668) MODEM: Time synced — epoch=1780039190000 ms[0m
+[0;32mI (337668) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (337668) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (342678) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.3 km/h[0m
+[0;32mI (347738) MODEM: GPS fix: lat=17.309410  lng=78.591800  speed=0.1 km/h[0m
+[0;32mI (348738) MODEM: TLS configured[0m
+[0;32mI (349288) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m
+[0;32mI (363468) MODEM: QMTOPEN raw: 
+OK
+
++QMTOPEN: 0,4
+[0m
+[0;31mE (363468) MODEM: QMTOPEN result=4 (4=DNS fail, 5=net/TCP fail)[0m
+[0;32mI (363528) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.2 km/h[0m
+[0;32mI (368468) MODEM: Attaching to LTE...[0m
+[0;32mI (368568) MODEM: Waiting for LTE registration...[0m
+[0;32mI (368718) MODEM: GPS fix: lat=17.309410  lng=78.591790  speed=0.1 km/h[0m
+[0;32mI (368768) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;32mI (369878) MODEM: IP: 
++QIACT: 1,1,1,"100.84.167.254"
+
+OK
+[0m
+[0;32mI (369938) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.167.254.255.255.255.0","100.84.167.1","121.242.190.150","115.249.168.190"
+
+OK
+[0m
+[0;32mI (370048) MODEM: DNS set to Airtel fallback (both ctx)[0m
+[0;32mI (381488) ACCEL: Pothole! severity=MEDIUM peak=3.32g (x=-2.56 y=1.75 z=1.19) gps=YES lat=17.309410 lng=78.591790[0m
+[0;32mI (383488) ACCEL: Pothole! severity=LOW peak=1.72g (x=-0.78 y=1.52 z=0.09) gps=YES lat=17.309410 lng=78.591790[0m
+[0;32mI (384228) MODEM: PING amazon.com: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (384288) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.1 km/h[0m
+[0;32mI (385878) ACCEL: Pothole! severity=LOW peak=1.99g (x=-1.56 y=0.85 z=0.89) gps=YES lat=17.309410 lng=78.591780[0m
+[0;32mI (394298) ACCEL: Pothole! severity=LOW peak=1.51g (x=-1.45 y=-0.43 z=0.09) gps=YES lat=17.309410 lng=78.591780[0m
+[0;32mI (398468) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 565
+[0m
+[0;32mI (398528) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.1 km/h[0m
+[0;32mI (398578) MODEM: Time synced — epoch=1780039251000 ms[0m
+[0;32mI (398578) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (398578) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;32mI (403588) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.2 km/h[0m
+[0;32mI (408648) MODEM: GPS fix: lat=17.309410  lng=78.591780  speed=0.3 km/h[0m
+[0;32mI (409648) MODEM: TLS configured[0m
+[0;32mI (410198) MODEM: QMTOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:443[0m

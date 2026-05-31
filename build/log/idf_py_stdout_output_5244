@@ -1,0 +1,536 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xb (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378cda
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x1870
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcec
+load:0x403cc700,len:0x2ec8
+entry 0x403c9918
+[0;32mI (26) boot: ESP-IDF v5.2.7 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 28 2026 16:53:50[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (83) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0e5d4h ( 58836) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001e5fc vaddr=3fc93c00 size=01a1ch (  6684) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=266c8h (157384) map[0m
+[0;32mI (148) esp_image: segment 3: paddr=000466f0 vaddr=3fc9561c size=01434h (  5172) load[0m
+[0;32mI (150) esp_image: segment 4: paddr=00047b2c vaddr=40374000 size=0fb34h ( 64308) load[0m
+[0;32mI (168) esp_image: segment 5: paddr=00057668 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (175) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (175) boot: Disabling RNG early entropy source...[0m
+[0;32mI (188) cpu_start: Multicore app[0m
+[0;32mI (198) cpu_start: Pro cpu start user code[0m
+[0;32mI (198) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (198) cpu_start: Application information:[0m
+[0;32mI (201) cpu_start: Project name:     pothole_lte[0m
+[0;32mI (206) cpu_start: App version:      1[0m
+[0;32mI (210) cpu_start: Compile time:     May 28 2026 16:52:53[0m
+[0;32mI (216) cpu_start: ELF file SHA256:  3f41f3f61...[0m
+[0;32mI (222) cpu_start: ESP-IDF:          v5.2.7[0m
+[0;32mI (227) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (231) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (236) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (248) heap_init: At 3FC97A10 len 00051D00 (327 KiB): RAM[0m
+[0;32mI (254) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (260) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (267) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (281) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (301) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (319) main_task: Calling app_main()[0m
+[0;32mI (319) MAIN: Pothole LTE Firmware v1.0.0 starting[0m
+[0;32mI (339) MAIN: Identity loaded — device=pothole-unit-01 org=ORG-001 apn=airtelgprs.com[0m
+[0;32mI (339) MAIN: Endpoint=a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com  Topic=potholes/detection/pothole-unit-01[0m
+[0;32mI (349) MAIN: Offline buffer: 50 slots[0m
+[0;32mI (349) MODEM: Waiting for modem to boot...[0m
+[0;32mI (359) MODEM: GPS task: waiting for modem init to complete...[0m
+[0;32mI (369) ACCEL: Accelerometer ADC ready — sampling @ 100 Hz[0m
+[0;32mI (369) MAIN: All tasks launched[0m
+[0;32mI (379) main_task: Returned from app_main()[0m
+[0;32mI (3409) MODEM: Modem responding to AT[0m
+[0;32mI (3619) MODEM: SIM IMSI  : 
+404490689549005
+
+OK
+[0m
+[0;32mI (3669) MODEM: SIM ICCID : 
++QCCID: 8991000924355635841F
+
+OK
+[0m
+[0;32mI (3729) MODEM: SIM Number: 
++CNUM: "","1",129
+
+OK
+[0m
+[0;32mI (3729) MODEM: Modem init OK[0m
+[0;32mI (3829) MODEM: GNSS started[0m
+[0;32mI (3829) MODEM: Attaching to LTE...[0m
+[0;32mI (3929) MODEM: Waiting for LTE registration...[0m
+[0;32mI (3979) MODEM: LTE registered: 
++CEREG: 0,1
+
+OK
+[0m
+[0;33mW (4029) MODEM: QIACT activate failed, checking existing PDP state: 
+ERROR
+[0m
+[0;32mI (5079) MODEM: IP: 
++QIACT: 1,1,1,"100.84.164.131"
+
+OK
+[0m
+[0;32mI (5139) MODEM: PDP params: 
++CGCONTRDP: 1,5,"airtelgprs.com.mnc049.mcc404.gprs","100.84.164.131.255.255.255.0","100.84.164.1","117.96.122.47","203.145.160.6"
+
+OK
+[0m
+[0;32mI (5249) MODEM: DNS set to carrier: 117.96.122.47 / 203.145.160.6[0m
+[0;32mI (5299) MODEM: Signal (CSQ): 
++CSQ: 25,99
+
+OK
+[0m
+[0;32mI (5349) MODEM: Operator: 
++COPS: 0,0,"IND airtel",7
+
+OK
+[0m
+[0;32mI (5679) MODEM: PING 8.8.8.8 (IP): 
+OK
+
++QPING: 0,"8.8.8.8",64,152,255
+
++QPING: 0,1,1,0,152,152,152
+[0m
+[0;32mI (10899) MODEM: PING amazon.com (DNS): 
+OK
+
++QPING: 569
+
++QPING: 0,1,0,1,0,0,0
+[0m
+[0;32mI (11259) MODEM: PING AWS endpoint: 
+OK
+
++QPING: 0,"35.154.46.242",64,61,255
+
++QPING: 0,1,1,0,61,61,61
+[0m
+[0;32mI (11259) MODEM: IP routing OK — data plan active[0m
+[0;32mI (11319) MODEM: Time synced — epoch=1780117705000 ms[0m
+[0;32mI (11319) pothole_certs: Loaded "client_cert" from NVS (1220 bytes)[0m
+[0;32mI (11319) pothole_certs: Loaded "client_key" from NVS (1679 bytes)[0m
+[0;33mW (22339) MODEM: ALPN config rejected by modem, trying alternate syntax: 
+ERROR
+[0m
+[0;33mW (22389) MODEM: ALPN unsupported, falling back to AWS IoT MQTT port 8883[0m
+[0;32mI (22419) MODEM: Modem UFS files: 
++QFLST: "UFS:boot",15004
++QFLST: "UFS:firm",243616
++QFLST: "UFS:cacert.pem",1208
++QFLST: "UFS:client.pem",1220
++QFLST: "UFS:client_key.pem",1679
++QFLST: "UFS:gnss_data",4636
++QFLST: "UFS:gnss_[0m
+[0;32mI (22429) MODEM: TLS configured[0m
+[0;32mI (22989) MODEM: QSSLOPEN → a273hnswj35wzh-ats.iot.ap-south-1.amazonaws.com:8883 (via PDP ctx 1)[0m
+[0;32mI (24029) MODEM: QSSLOPEN raw: 
+OK
+
++QSSLOPEN: 0,0
+[0m
+[0;32mI (24029) MODEM: SSL socket opened[0m
+[0;32mI (24029) MODEM: Sending MQTT CONNECT (29 bytes)...[0m
+[0;32mI (27729) MODEM: CONNACK recv 4 bytes: 20 02 00 00[0m
+[0;32mI (27729) MODEM: MQTT connected to AWS IoT Core[0m
+[0;32mI (27729) MODEM: MQTT connected — signalling publish task[0m
+[0;32mI (27729) PUB: Publish task active[0m
+[0;32mI (71369) MODEM: GPS task: polling started[0m
+[0;32mI (71429) MODEM: GPS fix: lat=17.309420  lng=78.591600  speed=0.2 km/h[0m
+[0;32mI (76489) MODEM: GPS fix: lat=17.309420  lng=78.591600  speed=0.1 km/h[0m
+[0;32mI (81549) MODEM: GPS fix: lat=17.309420  lng=78.591600  speed=0.2 km/h[0m
+[0;32mI (86609) MODEM: GPS fix: lat=17.309420  lng=78.591590  speed=1.0 km/h[0m
+[0;32mI (91669) MODEM: GPS fix: lat=17.309420  lng=78.591590  speed=0.2 km/h[0m
+[0;32mI (96729) MODEM: GPS fix: lat=17.309420  lng=78.591590  speed=0.4 km/h[0m
+[0;32mI (101789) MODEM: GPS fix: lat=17.309420  lng=78.591580  speed=0.3 km/h[0m
+[0;32mI (106849) MODEM: GPS fix: lat=17.309420  lng=78.591570  speed=0.5 km/h[0m
+[0;32mI (111909) MODEM: GPS fix: lat=17.309420  lng=78.591570  speed=0.1 km/h[0m
+[0;32mI (116969) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.4 km/h[0m
+[0;32mI (122029) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.2 km/h[0m
+[0;32mI (127089) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.2 km/h[0m
+[0;32mI (132149) MODEM: GPS fix: lat=17.309430  lng=78.591560  speed=0.1 km/h[0m
+[0;32mI (137209) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.6 km/h[0m
+[0;32mI (142269) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.4 km/h[0m
+[0;32mI (147329) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.4 km/h[0m
+[0;32mI (151389) ACCEL: Pothole! severity=MEDIUM peak=2.58g (x=1.60 y=1.22 z=-1.62) gps=YES lat=17.309430 lng=78.591580[0m
+[0;32mI (151399) ACCEL: Saved pothole GPS event to NVS (event_02)[0m
+[0;32mI (151529) PUB: Published: {"event_id":"event_02","device_id":"pothole-unit-01","org_id":"ORG-001","timestamp_ms":1780117845069,"severity":"MEDIUM","peak_g":2.582,"x_g":1.597,"y_g":1.218,"z_g":-1.624,"magnitude_g":2.582,"lat":17.309430,"lng":78.591580,"speed_kmh":0.4,"has_gps":true}[0m
+[0;32mI (152389) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.2 km/h[0m
+[0;32mI (157449) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.4 km/h[0m
+[0;32mI (162509) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.4 km/h[0m
+[0;32mI (167569) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.4 km/h[0m
+[0;32mI (172629) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.3 km/h[0m
+[0;32mI (177689) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.7 km/h[0m
+[0;32mI (182749) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.3 km/h[0m
+[0;32mI (187809) MODEM: GPS fix: lat=17.309430  lng=78.591610  speed=0.3 km/h[0m
+[0;32mI (192869) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.4 km/h[0m
+[0;32mI (197929) MODEM: GPS fix: lat=17.309430  lng=78.591600  speed=0.1 km/h[0m
+[0;32mI (202989) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.5 km/h[0m
+[0;32mI (208049) MODEM: GPS fix: lat=17.309440  lng=78.591590  speed=0.5 km/h[0m
+[0;32mI (213109) MODEM: GPS fix: lat=17.309440  lng=78.591590  speed=0.2 km/h[0m
+[0;32mI (218169) MODEM: GPS fix: lat=17.309440  lng=78.591590  speed=0.2 km/h[0m
+[0;32mI (223229) MODEM: GPS fix: lat=17.309440  lng=78.591590  speed=0.5 km/h[0m
+[0;32mI (228289) MODEM: GPS fix: lat=17.309440  lng=78.591600  speed=0.2 km/h[0m
+[0;32mI (233349) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (238409) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.5 km/h[0m
+[0;32mI (243469) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.3 km/h[0m
+[0;32mI (248529) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.3 km/h[0m
+[0;32mI (253589) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (258649) MODEM: GPS fix: lat=17.309440  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (263709) MODEM: GPS fix: lat=17.309440  lng=78.591580  speed=0.2 km/h[0m
+[0;32mI (268769) MODEM: GPS fix: lat=17.309440  lng=78.591580  speed=0.4 km/h[0m
+[0;32mI (273829) MODEM: GPS fix: lat=17.309440  lng=78.591580  speed=0.4 km/h[0m
+[0;32mI (278889) MODEM: GPS fix: lat=17.309440  lng=78.591580  speed=0.3 km/h[0m
+[0;32mI (283949) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.2 km/h[0m
+[0;32mI (289009) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.3 km/h[0m
+[0;32mI (294069) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.3 km/h[0m
+[0;32mI (299129) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (300429) MODEM: Time synced — epoch=1780117995000 ms[0m
+[0;32mI (304189) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.1 km/h[0m
+[0;32mI (309249) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (314309) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (319369) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (324429) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.2 km/h[0m
+[0;32mI (329489) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.3 km/h[0m
+[0;32mI (334549) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.3 km/h[0m
+[0;32mI (339609) MODEM: GPS fix: lat=17.309430  lng=78.591590  speed=0.1 km/h[0m
+[0;32mI (344669) MODEM: GPS fix: lat=17.309430  lng=78.591580  speed=0.7 km/h[0m
+[0;32mI (349729) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.3 km/h[0m
+[0;32mI (354789) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.3 km/h[0m
+[0;32mI (359849) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.3 km/h[0m
+[0;32mI (364909) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.1 km/h[0m
+[0;32mI (369969) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.6 km/h[0m
+[0;32mI (375029) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.7 km/h[0m
+[0;32mI (380089) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.8 km/h[0m
+[0;32mI (385149) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.2 km/h[0m
+[0;32mI (390209) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.1 km/h[0m
+[0;32mI (395269) MODEM: GPS fix: lat=17.309440  lng=78.591570  speed=0.5 km/h[0m
+[0;32mI (400329) MODEM: GPS fix: lat=17.309440  lng=78.591570  speed=0.1 km/h[0m
+[0;32mI (405389) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.1 km/h[0m
+[0;32mI (410449) MODEM: GPS fix: lat=17.309430  lng=78.591570  speed=0.4 km/h[0m
+[0;32mI (415509) MODEM: GPS fix: lat=17.309440  lng=78.591570  speed=0.5 km/h[0m
+[0;32mI (420569) MODEM: GPS fix: lat=17.309440  lng=78.591560  speed=0.5 km/h[0m
+[0;32mI (425629) MODEM: GPS fix: lat=17.309440  lng=78.591550  speed=0.4 km/h[0m
+[0;32mI (430689) MODEM: GPS fix: lat=17.309440  lng=78.591550  speed=0.1 km/h[0m
+[0;32mI (435749) MODEM: GPS fix: lat=17.309440  lng=78.591550  speed=0.3 km/h[0m
+[0;32mI (439419) ACCEL: Pothole! severity=MEDIUM peak=2.95g (x=0.77 y=2.83 z=0.32) gps=YES lat=17.309440 lng=78.591550[0m
+[0;32mI (439469) ACCEL: Saved pothole GPS event to NVS (event_03)[0m
+[0;32mI (447079) ACCEL: Pothole! severity=LOW peak=1.70g (x=-0.72 y=-1.02 z=-1.15) gps=YES lat=17.309440 lng=78.591550[0m
+[0;32mI (447089) ACCEL: Saved pothole GPS event to NVS (event_04)[0m
+[0;32mI (449079) ACCEL: Pothole! severity=LOW peak=1.78g (x=-1.73 y=-0.02 z=0.42) gps=YES lat=17.309440 lng=78.591550[0m
+[0;32mI (449089) ACCEL: Saved pothole GPS event to NVS (event_05)[0m
+[0;31mE (449519) MODEM: QSSLSEND no prompt: 
+ERROR
+[0m
+[0;33mW (449519) PUB: MQTT PUBLISH send failed[0m
+[0;33mW (449519) PUB: Publish failed — buffering offline[0m
+[0;33mW (449519) PUB: Event queued offline (1 buffered)[0m
+[0;32mI (449629) MODEM: GPS fix: lat=17.309450  lng=78.591540  speed=0.2 km/h[0m
+[0;32mI (452319) ACCEL: Pothole! severity=LOW peak=1.61g (x=-0.51 y=-0.41 z=-1.47) gps=YES lat=17.309450 lng=78.591540[0m
+[0;32mI (452329) ACCEL: Saved pothole GPS event to NVS (event_06)[0m
+[0;32mI (458939) ACCEL: Pothole! severity=LOW peak=2.47g (x=-2.28 y=-0.20 z=-0.93) gps=YES lat=17.309450 lng=78.591540[0m
+[0;32mI (458979) ACCEL: Saved pothole GPS event to NVS (event_07)[0m
+[0;31mE (459679) MODEM: QSSLSEND no prompt: 
+ERROR
+[0m
+[0;33mW (459679) PUB: MQTT PUBLISH send failed[0m
+[0;33mW (459679) PUB: Offline drain failed — re-buffering[0m
+[0;33mW (459679) PUB: Event queued offline (1 buffered)[0m
+[0;33mW (459689) PUB: Event queued offline (2 buffered)[0m
+[0;33mW (459689) PUB: Event queued offline (3 buffered)[0m
+[0;33mW (459699) PUB: Event queued offline (4 buffered)[0m
+[0;33mW (459699) PUB: Event queued offline (5 buffered)[0m
+[0;32mI (459789) MODEM: GPS fix: lat=17.309450  lng=78.591530  speed=0.8 km/h[0m
+[0;32mI (463809) ACCEL: Pothole! severity=MEDIUM peak=2.94g (x=0.23 y=-1.31 z=-2.62) gps=YES lat=17.309450 lng=78.591530[0m
+[0;32mI (463819) ACCEL: Saved pothole GPS event to NVS (event_08)[0m
+[0;33mW (463819) PUB: Event queued offline (6 buffered)[0m
+[0;32mI (464849) MODEM: GPS fix: lat=17.309450  lng=78.591530  speed=0.3 km/h[0m
+[0;32mI (466319) ACCEL: Pothole! severity=LOW peak=1.52g (x=-0.83 y=-0.71 z=-1.06) gps=YES lat=17.309450 lng=78.591530[0m
+[0;32mI (466329) ACCEL: Saved pothole GPS event to NVS (event_09)[0m
+[0;33mW (466329) PUB: Event queued offline (7 buffered)[0m
+[0;32mI (468899) ACCEL: Pothole! severity=LOW peak=1.60g (x=-1.52 y=0.21 z=-0.44) gps=YES lat=17.309450 lng=78.591530[0m
+[0;32mI (468909) ACCEL: Saved pothole GPS event to NVS (event_10)[0m
+[0;33mW (468909) PUB: Event queued offline (8 buffered)[0m
+[0;32mI (469909) MODEM: GPS fix: lat=17.309450  lng=78.591530  speed=0.2 km/h[0m
+[0;32mI (470969) ACCEL: Pothole! severity=LOW peak=1.52g (x=-0.46 y=1.16 z=0.87) gps=YES lat=17.309450 lng=78.591530[0m
+[0;32mI (470979) ACCEL: Saved pothole GPS event to NVS (event_11)[0m
+[0;33mW (470979) PUB: Event queued offline (9 buffered)[0m
+[0;32mI (473199) ACCEL: Pothole! severity=LOW peak=1.51g (x=-0.74 y=1.00 z=0.85) gps=YES lat=17.309450 lng=78.591530[0m
+[0;32mI (473249) ACCEL: Saved pothole GPS event to NVS (event_12)[0m
+[0;33mW (473249) PUB: Event queued offline (10 buffered)[0m
+[0;32mI (474969) MODEM: GPS fix: lat=17.309440  lng=78.591530  speed=0.2 km/h[0m
+[0;32mI (477699) ACCEL: Pothole! severity=HIGH peak=5.45g (x=-3.81 y=3.86 z=-0.58) gps=YES lat=17.309440 lng=78.591530[0m
+[0;32mI (477709) ACCEL: Saved pothole GPS event to NVS (event_13)[0m
+[0;33mW (477709) PUB: Event queued offline (11 buffered)[0m
+[0;32mI (479879) ACCEL: Pothole! severity=LOW peak=1.53g (x=-1.52 y=0.14 z=-0.13) gps=YES lat=17.309440 lng=78.591530[0m
+[0;32mI (479889) ACCEL: Saved pothole GPS event to NVS (event_14)[0m
+[0;33mW (479889) PUB: Event queued offline (12 buffered)[0m
+[0;32mI (480029) MODEM: GPS fix: lat=17.309440  lng=78.591530  speed=0.2 km/h[0m
+[0;32mI (485089) MODEM: GPS fix: lat=17.309440  lng=78.591520  speed=0.3 km/h[0m
+[0;32mI (486219) ACCEL: Pothole! severity=MEDIUM peak=2.90g (x=-2.39 y=-1.49 z=-0.67) gps=YES lat=17.309440 lng=78.591520[0m
+[0;32mI (486229) ACCEL: Saved pothole GPS event to NVS (event_15)[0m
+[0;33mW (486229) PUB: Event queued offline (13 buffered)[0m
+[0;32mI (489699) ACCEL: Pothole! severity=LOW peak=1.89g (x=1.47 y=0.67 z=-0.98) gps=YES lat=17.309440 lng=78.591520[0m
+[0;32mI (489739) ACCEL: Saved pothole GPS event to NVS (event_16)[0m
+[0;33mW (489739) PUB: Event queued offline (14 buffered)[0m
+[0;32mI (490149) MODEM: GPS fix: lat=17.309440  lng=78.591520  speed=0.1 km/h[0m
+[0;32mI (495209) MODEM: GPS fix: lat=17.309440  lng=78.591520  speed=0.2 km/h[0m
+[0;32mI (500269) MODEM: GPS fix: lat=17.309440  lng=78.591520  speed=0.6 km/h[0m
+[0;32mI (504589) ACCEL: Pothole! severity=MEDIUM peak=3.14g (x=-0.66 y=-0.99 z=-2.91) gps=YES lat=17.309440 lng=78.591520[0m
+[0;32mI (504599) ACCEL: Saved pothole GPS event to NVS (event_17)[0m
+[0;33mW (504599) PUB: Event queued offline (15 buffered)[0m
+[0;32mI (505329) MODEM: GPS fix: lat=17.309440  lng=78.591520  speed=0.6 km/h[0m
+[0;32mI (510389) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.3 km/h[0m
+[0;32mI (511469) ACCEL: Pothole! severity=LOW peak=2.28g (x=-1.27 y=-1.86 z=-0.36) gps=YES lat=17.309440 lng=78.591510[0m
+[0;32mI (511479) ACCEL: Saved pothole GPS event to NVS (event_18)[0m
+[0;33mW (511479) PUB: Event queued offline (16 buffered)[0m
+[0;32mI (513509) ACCEL: Pothole! severity=LOW peak=1.54g (x=-1.06 y=-0.89 z=-0.67) gps=YES lat=17.309440 lng=78.591510[0m
+[0;32mI (513519) ACCEL: Saved pothole GPS event to NVS (event_19)[0m
+[0;33mW (513519) PUB: Event queued offline (17 buffered)[0m
+[0;32mI (515449) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.5 km/h[0m
+[0;32mI (517769) ACCEL: Pothole! severity=LOW peak=1.64g (x=0.89 y=-1.35 z=-0.24) gps=YES lat=17.309440 lng=78.591510[0m
+[0;32mI (517779) ACCEL: Saved pothole GPS event to NVS (event_00)[0m
+[0;33mW (517779) PUB: Event queued offline (18 buffered)[0m
+[0;32mI (520509) MODEM: GPS fix: lat=17.309440  lng=78.591500  speed=1.0 km/h[0m
+[0;32mI (520679) ACCEL: Pothole! severity=LOW peak=1.58g (x=-0.16 y=1.19 z=-1.02) gps=YES lat=17.309440 lng=78.591500[0m
+[0;32mI (520719) ACCEL: Saved pothole GPS event to NVS (event_01)[0m
+[0;33mW (520719) PUB: Event queued offline (19 buffered)[0m
+[0;32mI (525569) MODEM: GPS fix: lat=17.309440  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (530629) MODEM: GPS fix: lat=17.309440  lng=78.591500  speed=0.3 km/h[0m
+[0;32mI (535689) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (540749) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (545809) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (550869) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (555929) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (560989) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (566049) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (571109) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.7 km/h[0m
+[0;32mI (576169) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (581229) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.0 km/h[0m
+[0;32mI (586289) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (591349) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (596409) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (601129) MODEM: Time synced — epoch=1780118295000 ms[0m
+[0;32mI (601469) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (606529) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.5 km/h[0m
+[0;32mI (611589) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (616649) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.0 km/h[0m
+[0;32mI (621709) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.0 km/h[0m
+[0;32mI (626769) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (631829) MODEM: GPS fix: lat=17.309430  lng=78.591480  speed=0.6 km/h[0m
+[0;32mI (636889) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (641949) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (647009) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (652069) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (657129) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (662189) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.4 km/h[0m
+[0;32mI (667249) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (672309) MODEM: GPS fix: lat=17.309440  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (677369) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (682429) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.0 km/h[0m
+[0;32mI (687489) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (692549) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (697609) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (702669) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.4 km/h[0m
+[0;32mI (707729) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (712789) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.5 km/h[0m
+[0;32mI (717849) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (722909) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (727969) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (733029) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (738089) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (743149) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (748209) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (753269) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (758329) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.5 km/h[0m
+[0;32mI (763389) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.0 km/h[0m
+[0;32mI (768449) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.4 km/h[0m
+[0;32mI (773509) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (778569) MODEM: GPS fix: lat=17.309430  lng=78.591490  speed=0.5 km/h[0m
+[0;32mI (783629) MODEM: GPS fix: lat=17.309430  lng=78.591490  speed=0.4 km/h[0m
+[0;32mI (788689) MODEM: GPS fix: lat=17.309430  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (793749) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.2 km/h[0m
+[0;32mI (798809) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (803869) MODEM: GPS fix: lat=17.309430  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (808929) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.2 km/h[0m
+[0;32mI (813989) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.7 km/h[0m
+[0;32mI (819049) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.4 km/h[0m
+[0;32mI (824109) MODEM: GPS fix: lat=17.309430  lng=78.591460  speed=0.4 km/h[0m
+[0;32mI (829169) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.9 km/h[0m
+[0;32mI (834229) MODEM: GPS fix: lat=17.309430  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (839289) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.2 km/h[0m
+[0;32mI (844349) MODEM: GPS fix: lat=17.309430  lng=78.591470  speed=0.4 km/h[0m
+[0;32mI (849409) MODEM: GPS fix: lat=17.309430  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (854469) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (859529) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.6 km/h[0m
+[0;32mI (864589) MODEM: GPS fix: lat=17.309440  lng=78.591470  speed=0.5 km/h[0m
+[0;32mI (869649) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (874709) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (879769) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (884829) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (889889) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.5 km/h[0m
+[0;32mI (894949) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (900009) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (904179) MODEM: Time synced — epoch=1780118598000 ms[0m
+[0;32mI (905069) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (910129) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (915189) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (920249) MODEM: GPS fix: lat=17.309440  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (925309) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (930369) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.8 km/h[0m
+[0;32mI (935429) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (940489) MODEM: GPS fix: lat=17.309450  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (945549) MODEM: GPS fix: lat=17.309450  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (950609) MODEM: GPS fix: lat=17.309450  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (955669) MODEM: GPS fix: lat=17.309450  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (960729) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.2 km/h[0m
+[0;32mI (965789) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (970849) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.3 km/h[0m
+[0;32mI (975909) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (980969) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (986029) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (991089) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.3 km/h[0m
+[0;32mI (996149) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.1 km/h[0m
+[0;32mI (1001209) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.0 km/h[0m
+[0;32mI (1006269) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.6 km/h[0m
+[0;32mI (1011329) MODEM: GPS fix: lat=17.309450  lng=78.591470  speed=0.4 km/h[0m
+[0;32mI (1016389) MODEM: GPS fix: lat=17.309440  lng=78.591470  speed=0.2 km/h[0m
+[0;32mI (1021449) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.5 km/h[0m
+[0;32mI (1026509) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (1031569) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.3 km/h[0m
+[0;32mI (1036629) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.6 km/h[0m
+[0;32mI (1041689) MODEM: GPS fix: lat=17.309440  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (1046749) MODEM: GPS fix: lat=17.309430  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (1051809) MODEM: GPS fix: lat=17.309430  lng=78.591490  speed=1.0 km/h[0m
+[0;32mI (1056869) MODEM: GPS fix: lat=17.309430  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (1061929) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.3 km/h[0m
+[0;32mI (1066989) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1072049) MODEM: GPS fix: lat=17.309430  lng=78.591510  speed=0.5 km/h[0m
+[0;32mI (1077109) MODEM: GPS fix: lat=17.309430  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1082169) MODEM: GPS fix: lat=17.309430  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1087229) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.0 km/h[0m
+[0;32mI (1092289) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1097349) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1102409) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1107469) MODEM: GPS fix: lat=17.309440  lng=78.591510  speed=0.8 km/h[0m
+[0;32mI (1112529) MODEM: GPS fix: lat=17.309440  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1117589) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1122649) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1127709) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.4 km/h[0m
+[0;32mI (1132769) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1137829) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1142889) MODEM: GPS fix: lat=17.309430  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1147949) MODEM: GPS fix: lat=17.309430  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1153009) MODEM: GPS fix: lat=17.309430  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1158069) MODEM: GPS fix: lat=17.309420  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1163129) MODEM: GPS fix: lat=17.309420  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1168189) MODEM: GPS fix: lat=17.309420  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1173249) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1178309) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1183369) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1187219) ACCEL: Pothole! severity=HIGH peak=4.82g (x=0.28 y=-3.93 z=-2.78) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1187229) ACCEL: Saved pothole GPS event to NVS (event_02)[0m
+[0;33mW (1187229) PUB: Event queued offline (20 buffered)[0m
+[0;32mI (1188429) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.3 km/h[0m
+[0;32mI (1189229) ACCEL: Pothole! severity=MEDIUM peak=3.40g (x=1.16 y=-3.08 z=0.85) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1189239) ACCEL: Saved pothole GPS event to NVS (event_03)[0m
+[0;33mW (1189239) PUB: Event queued offline (21 buffered)[0m
+[0;32mI (1191239) ACCEL: Pothole! severity=LOW peak=1.67g (x=-0.43 y=1.48 z=0.64) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1191249) ACCEL: Saved pothole GPS event to NVS (event_04)[0m
+[0;33mW (1191249) PUB: Event queued offline (22 buffered)[0m
+[0;32mI (1193489) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1197449) ACCEL: Pothole! severity=LOW peak=2.49g (x=1.49 y=0.21 z=1.99) gps=YES lat=17.309420 lng=78.591490[0m
+[0;32mI (1197459) ACCEL: Saved pothole GPS event to NVS (event_05)[0m
+[0;33mW (1197459) PUB: Event queued offline (23 buffered)[0m
+[0;32mI (1198549) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.5 km/h[0m
+[0;32mI (1203609) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (1207229) MODEM: Time synced — epoch=1780118901000 ms[0m
+[0;32mI (1208669) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.4 km/h[0m
+[0;32mI (1213729) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.2 km/h[0m
+[0;32mI (1214239) ACCEL: Pothole! severity=LOW peak=1.53g (x=1.15 y=0.87 z=-0.52) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1214289) ACCEL: Saved pothole GPS event to NVS (event_06)[0m
+[0;33mW (1214289) PUB: Event queued offline (24 buffered)[0m
+[0;32mI (1216269) ACCEL: Pothole! severity=LOW peak=1.63g (x=-0.60 y=1.22 z=-0.89) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1216279) ACCEL: Saved pothole GPS event to NVS (event_07)[0m
+[0;33mW (1216279) PUB: Event queued offline (25 buffered)[0m
+[0;32mI (1218389) ACCEL: Pothole! severity=LOW peak=1.54g (x=0.60 y=1.23 z=-0.72) gps=YES lat=17.309420 lng=78.591500[0m
+[0;32mI (1218399) ACCEL: Saved pothole GPS event to NVS (event_08)[0m
+[0;33mW (1218399) PUB: Event queued offline (26 buffered)[0m
+[0;32mI (1218789) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=1.1 km/h[0m
+[0;32mI (1223849) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.3 km/h[0m
+[0;32mI (1228909) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=1.0 km/h[0m
+[0;32mI (1233969) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1239029) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.2 km/h[0m
+[0;32mI (1244089) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1249149) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1254209) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (1259269) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1264329) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (1269389) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.4 km/h[0m
+[0;32mI (1274449) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (1279509) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.2 km/h[0m
+[0;32mI (1284569) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (1289629) MODEM: GPS fix: lat=17.309420  lng=78.591480  speed=0.1 km/h[0m
+[0;32mI (1294689) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.1 km/h[0m
+[0;32mI (1299749) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=0.0 km/h[0m
+[0;32mI (1300019) ACCEL: Pothole! severity=LOW peak=1.53g (x=-0.66 y=1.37 z=-0.15) gps=YES lat=17.309420 lng=78.591490[0m
+[0;32mI (1300029) ACCEL: Saved pothole GPS event to NVS (event_09)[0m
+[0;33mW (1300029) PUB: Event queued offline (27 buffered)[0m
+[0;32mI (1303469) ACCEL: Pothole! severity=LOW peak=1.62g (x=-0.76 y=1.40 z=-0.26) gps=YES lat=17.309420 lng=78.591490[0m
+[0;32mI (1303509) ACCEL: Saved pothole GPS event to NVS (event_10)[0m
+[0;33mW (1303509) PUB: Event queued offline (28 buffered)[0m
+[0;32mI (1304809) MODEM: GPS fix: lat=17.309410  lng=78.591500  speed=0.4 km/h[0m
+[0;32mI (1309869) MODEM: GPS fix: lat=17.309410  lng=78.591500  speed=0.3 km/h[0m
+[0;32mI (1314929) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.6 km/h[0m
+[0;32mI (1319989) MODEM: GPS fix: lat=17.309410  lng=78.591500  speed=0.6 km/h[0m
+[0;32mI (1325049) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.3 km/h[0m
+[0;32mI (1330109) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.3 km/h[0m
+[0;32mI (1335169) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.7 km/h[0m
+[0;32mI (1340229) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.4 km/h[0m
+[0;32mI (1345289) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.3 km/h[0m
+[0;32mI (1350349) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.1 km/h[0m
+[0;32mI (1355409) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.1 km/h[0m
+[0;32mI (1360469) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.6 km/h[0m
+[0;32mI (1365529) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.2 km/h[0m
+[0;32mI (1370589) MODEM: GPS fix: lat=17.309410  lng=78.591530  speed=0.1 km/h[0m
+[0;32mI (1375649) MODEM: GPS fix: lat=17.309410  lng=78.591530  speed=0.1 km/h[0m
+[0;32mI (1380709) MODEM: GPS fix: lat=17.309410  lng=78.591530  speed=0.5 km/h[0m
+[0;32mI (1385769) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.3 km/h[0m
+[0;32mI (1390829) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.1 km/h[0m
+[0;32mI (1395889) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.2 km/h[0m
+[0;32mI (1400949) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=0.2 km/h[0m
+[0;32mI (1406009) MODEM: GPS fix: lat=17.309410  lng=78.591520  speed=1.6 km/h[0m
+[0;32mI (1411069) MODEM: GPS fix: lat=17.309410  lng=78.591510  speed=0.2 km/h[0m
+[0;32mI (1416129) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.1 km/h[0m
+[0;32mI (1421189) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.4 km/h[0m
+[0;32mI (1426249) MODEM: GPS fix: lat=17.309420  lng=78.591490  speed=1.0 km/h[0m
+[0;32mI (1431309) MODEM: GPS fix: lat=17.309420  lng=78.591500  speed=0.8 km/h[0m
