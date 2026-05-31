@@ -1,0 +1,26 @@
+git # ESP-IDF build output
+build/
+managed_components/
+dependencies.lock
+
+# Dashboard dependencies and generated frontend build
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env
+
+# Device credentials and TLS material
+*.pem
+*.key
+*.crt
+main/certs/private.pem.key
+main/certs/device.pem.crt
+
+# Generated firmware binaries and maps
+*.bin
+*.elf
+*.map
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
