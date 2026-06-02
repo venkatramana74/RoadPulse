@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import {
   Activity, AlertTriangle, Bell, CalendarDays, ChevronDown, ChevronLeft,
   ChevronRight, CircuitBoard, Download, FileJson, FileText, Gauge,
-  LayoutDashboard, MapPin, Maximize2, Moon, Network, RadioTower, RefreshCw,
+  LayoutDashboard, MapPin, Moon, Network, RadioTower, RefreshCw,
   Search, Settings, ShieldCheck, Siren, Sun
 } from "lucide-react";
 import "./styles.css";
@@ -28,17 +28,25 @@ function normalizeTimestamp(value) {
 
 function normalizeEvent(item, index = 0) {
   const severity = String(item.severity || "low").toLowerCase();
-  const fallbackEventId = `event_${String(index).padStart(2, "0")}`;
+  const timestamp_ms = normalizeTimestamp(item.timestamp_ms ?? item.timestamp ?? item.created_at_ms);
+  const rawEventId = item.event_id ?? item.id ?? item.eventId;
+  const fallbackEventId = `EV-${String(timestamp_ms).slice(-8)}-${String(index + 1).padStart(2, "0")}`;
+  const x_g = Number(item.x_g ?? item.x ?? 0);
+  const y_g = Number(item.y_g ?? item.y ?? 0);
+  const z_g = Number(item.z_g ?? item.z ?? 0);
+  const vectorG = Math.sqrt((x_g * x_g) + (y_g * y_g) + (z_g * z_g));
+  const magnitude_g = Number(item.magnitude_g ?? item.magnitude ?? vectorG);
+  const reportedPeak = Number(item.peak_g ?? item.peakG ?? item.g_force ?? 0);
   return {
-    event_id: item.event_id ?? item.id ?? item.eventId ?? fallbackEventId,
-    timestamp_ms: normalizeTimestamp(item.timestamp_ms ?? item.timestamp ?? item.created_at_ms),
+    event_id: rawEventId === undefined || rawEventId === null || /^event_\d{2}$/i.test(String(rawEventId)) ? fallbackEventId : rawEventId,
+    timestamp_ms,
     road: item.road || item.location || item.road_name || "Unknown Road",
     severity: ["low", "medium", "high"].includes(severity) ? severity : "low",
-    peak_g: Number(item.peak_g ?? item.peakG ?? item.g_force ?? item.magnitude_g ?? 0),
-    x_g: Number(item.x_g ?? item.x ?? 0),
-    y_g: Number(item.y_g ?? item.y ?? 0),
-    z_g: Number(item.z_g ?? item.z ?? 0),
-    magnitude_g: Number(item.magnitude_g ?? item.magnitude ?? 0),
+    peak_g: Math.max(reportedPeak, magnitude_g, vectorG),
+    x_g,
+    y_g,
+    z_g,
+    magnitude_g,
     device_id: item.device_id || item.device || item.deviceId || "ESP32",
     lat: Number(item.lat ?? item.latitude ?? 0),
     lng: Number(item.lng ?? item.longitude ?? 0),
@@ -218,23 +226,23 @@ function App() {
 
   return (
     <div className="app-shell">
-      <Sidebar apiState={apiState} activeView={activeView} onNavigate={setActiveView} alertCount={metrics.medium + metrics.high} />
+      <Sidebar apiState={apiState} activeView={activeView} onNavigate={setActiveView} alertCount={metrics.medium + metrics.high} refreshMs={refreshMs} />
       <main className="dashboard">
         <Header apiState={apiState} lastUpdated={lastUpdated} themeMode={themeMode} />
-        <Toolbar
-          limit={limit}
-          severity={severity}
-          timeRange={timeRange}
-          search={search}
-          setLimit={setLimit}
-          setSeverity={setSeverity}
-          setTimeRange={setTimeRange}
-          setSearch={setSearch}
-          onCsv={() => exportCsv(filtered)}
-          onJson={() => downloadJson(filtered)}
-        />
-        <LiveStrip apiState={apiState} error={error} retries={retries} latest={latest} />
-        <MetricGrid metrics={metrics} filtered={filtered} limit={limit} latest={latest} />
+        {activeView !== "settings" && <Toolbar
+            limit={limit}
+            severity={severity}
+            timeRange={timeRange}
+            search={search}
+            setLimit={setLimit}
+            setSeverity={setSeverity}
+            setTimeRange={setTimeRange}
+            setSearch={setSearch}
+            onCsv={() => exportCsv(filtered)}
+            onJson={() => downloadJson(filtered)}
+          />}
+        {activeView !== "settings" && <LiveStrip apiState={apiState} error={error} retries={retries} latest={latest} refreshMs={refreshMs} />}
+        {activeView !== "settings" && <MetricGrid metrics={metrics} filtered={filtered} limit={limit} latest={latest} />}
         <ActiveView
           view={activeView}
           events={filtered}
@@ -272,7 +280,7 @@ function ActiveView({ view, events, metrics, page, setPage, setActiveView, setMa
     setActiveView("road-network");
   };
 
-  if (view === "road-network") return <section className="view-grid road-view"><RoadMap events={events} focusEvent={mapFocusEvent} /><RightRail events={events} onShowMap={showOnMap} verifiedAlerts={verifiedAlerts} onVerifyAlert={onVerifyAlert} /></section>;
+  if (view === "road-network") return <section className="view-grid road-view map-only"><RoadMap events={events} focusEvent={mapFocusEvent} /><RightRail events={events} onShowMap={showOnMap} verifiedAlerts={verifiedAlerts} onVerifyAlert={onVerifyAlert} /></section>;
   if (view === "detections") return <section className="view-grid single"><Recent events={events} page={page} setPage={setPage} onShowMap={showOnMap} /></section>;
   if (view === "reports") return <ReportsView events={events} metrics={metrics} />;
   if (view === "alerts") return <AlertsView events={events} onShowMap={showOnMap} verifiedAlerts={verifiedAlerts} onVerifyAlert={onVerifyAlert} />;
@@ -282,21 +290,20 @@ function ActiveView({ view, events, metrics, page, setPage, setActiveView, setMa
   return <section className="content-grid">
     <RoadMap events={events} focusEvent={mapFocusEvent} />
     <SeverityPanel metrics={metrics} />
-    <Recent events={events} page={page} setPage={setPage} onShowMap={showOnMap} />
     <RightRail events={events} onShowMap={showOnMap} verifiedAlerts={verifiedAlerts} onVerifyAlert={onVerifyAlert} />
   </section>;
 }
 
-function LiveStrip({ apiState, error, retries, latest }) {
+function LiveStrip({ apiState, error, retries, latest, refreshMs }) {
   return <div className={`live-strip ${apiState}`}>
-    <span><i />{apiState === "live" || apiState === "refreshing" ? "Live polling every 3s" : apiState === "error" ? "API connection failed" : "Connecting to API"}</span>
+    <span><i />{apiState === "live" || apiState === "refreshing" ? `Live polling every ${Math.round(refreshMs / 1000)}s` : apiState === "error" ? "API connection failed" : "Connecting to API"}</span>
     <span>Retries: {retries}</span>
     <span>Last event: {latest ? formatTime(latest.timestamp_ms) : "none"}</span>
     {error && <b>{error}</b>}
   </div>;
 }
 
-function Sidebar({ apiState, activeView, onNavigate, alertCount }) {
+function Sidebar({ apiState, activeView, onNavigate, alertCount, refreshMs }) {
   const items = [
     [LayoutDashboard, "Dashboard", "dashboard"],
     [Network, "Road Network", "road-network"],
@@ -313,15 +320,15 @@ function Sidebar({ apiState, activeView, onNavigate, alertCount }) {
     <div className="road-visual"><div className="moon" /><div className="road-line" /></div>
     <div className="health">
       <div className="health-title"><Activity size={19}/><span>System Health<br/><strong>{apiState === "error" ? "API Needs Attention" : "Operational"}</strong></span></div>
-      <p><ShieldCheck size={18}/> <span>Polling<br/><b>3 seconds</b></span></p>
+      <p><ShieldCheck size={18}/> <span>Polling<br/><b>{Math.round(refreshMs / 1000)} seconds</b></span></p>
     </div>
   </aside>;
 }
 
 function Header({ apiState, lastUpdated, themeMode }) {
   return <header className="topbar">
-    <div><h2>RoadPulse Live Dashboard</h2><p>ESP32 MQTT pothole data through AWS API Gateway. <span>{apiState === "live" || apiState === "refreshing" ? "Live API connected" : apiState === "error" ? "Check API settings" : "Connecting"}</span></p></div>
-    <div className="top-actions"><span>{lastUpdated ? `Updated ${lastUpdated}` : "Waiting for data"}</span><span className="theme-chip">{themeMode === "system" ? "System" : cap(themeMode)}</span><div className="avatar">AD<i /></div></div>
+    <div><h2>RoadPulse Live Dashboard</h2></div>
+    <div className="top-actions"><span>{lastUpdated ? `Updated ${lastUpdated}` : "Waiting for data"}</span><span className="accuracy-note">accurately to 10-20 meters</span><div className="avatar">AD<i /></div></div>
   </header>;
 }
 
@@ -348,16 +355,18 @@ function Spark() {
 }
 
 function RoadMap({ events, focusEvent }) {
-  return <section className="panel map-panel"><div className="panel-title"><h3>ROAD HEALTH MAP</h3><div><button className="pill"><RefreshCw size={14}/>Mappls Live</button><button>Cluster View</button><Maximize2 size={17}/></div></div><div className="map map-live">
-    <MapplsLiveMap events={events} focusEvent={focusEvent} />
+  const [clusterView, setClusterView] = useState(true);
+  return <section className="panel map-panel"><div className="panel-title"><h3>ROAD HEALTH MAP</h3><div><button className="pill"><RefreshCw size={14}/>Mappls Live</button><button className={clusterView ? "active" : ""} onClick={() => setClusterView((value) => !value)}>Cluster View</button></div></div><div className="map map-live">
+    <MapplsLiveMap events={events} focusEvent={focusEvent} clusterView={clusterView} />
     <div className="legend"><p><i className="good"/>Low</p><p><i className="medium"/>Medium</p><p><i className="severe"/>High</p></div>
   </div></section>;
 }
 
-function MapplsLiveMap({ events, focusEvent }) {
+function MapplsLiveMap({ events, focusEvent, clusterView }) {
   const mapNode = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const lastFocusKeyRef = useRef("");
   const [failed, setFailed] = useState(false);
   const validEvents = useMemo(() => mergeFocusEvent(events, focusEvent).filter(isValidCoordinate), [events, focusEvent]);
 
@@ -403,7 +412,7 @@ function MapplsLiveMap({ events, focusEvent }) {
     validEvents.forEach((event, index) => {
       try {
         const selected = sameEvent(event, focusEvent);
-        const position = displayCoordinate(event, index, validEvents);
+        const position = clusterView ? displayCoordinate(event, index, validEvents) : { lat: event.lat, lng: event.lng };
         const marker = new api.Marker({
           map: mapRef.current,
           position: { lat: position.lat, lng: position.lng },
@@ -416,22 +425,19 @@ function MapplsLiveMap({ events, focusEvent }) {
       }
     });
 
-    if (focusEvent && isValidCoordinate(focusEvent)) {
+    const focusKey = focusEvent && isValidCoordinate(focusEvent) ? alertKey(focusEvent) : "";
+    if (focusKey && focusKey !== lastFocusKeyRef.current) {
       try {
         mapRef.current.setCenter?.({ lat: focusEvent.lat, lng: focusEvent.lng });
         mapRef.current.setZoom?.(16);
-      } catch {}
-    } else if (validEvents.length) {
-      const center = getMapCenter(validEvents);
-      try {
-        mapRef.current.setCenter?.({ lat: center.lat, lng: center.lng });
+        lastFocusKeyRef.current = focusKey;
       } catch {}
     }
-  }, [validEvents, focusEvent]);
+  }, [validEvents, focusEvent, clusterView]);
 
   return <>
     <div ref={mapNode} className="mappls-canvas" />
-    {failed && <FallbackMap events={events} focusEvent={focusEvent} />}
+    {failed && <FallbackMap events={events} focusEvent={focusEvent} clusterView={clusterView} />}
     {failed && <div className="map-status">Mappls unavailable. Showing built-in fallback.</div>}
     {focusEvent && <div className="map-focus-card">
       <b>#{focusEvent.event_id}</b>
@@ -511,9 +517,9 @@ function displayCoordinate(event, index, events) {
   };
 }
 
-function FallbackMap({ events, zoom = 1, focusEvent }) {
+function FallbackMap({ events, zoom = 1, focusEvent, clusterView = true }) {
   const markerEvents = mergeFocusEvent(events, focusEvent);
-  const positions = mapMarkerPositions(markerEvents);
+  const positions = mapMarkerPositions(markerEvents, clusterView);
   return <div className="fallback-map">
     <div className="map-layer" style={{ transform: `scale(${zoom})` }}>
     <svg viewBox="0 0 720 470" preserveAspectRatio="none">
@@ -536,12 +542,12 @@ function FallbackMap({ events, zoom = 1, focusEvent }) {
 
 function MapMarker({ className, x, y, label }) { return <div className={`marker ${className}`} style={{ left: x, top: y }}>{label}</div>; }
 
-function mapMarkerPositions(events) {
+function mapMarkerPositions(events, clusterView = true) {
   const fallback = [["43%","18%"],["53%","45%"],["19%","65%"],["51%","80%"],["84%","74%"],["32%","32%"],["68%","58%"],["74%","30%"],["28%","48%"],["60%","68%"]];
   const valid = events.filter(isValidCoordinate);
   if (!valid.length) return events.map((_, index) => ({ x: fallback[index % fallback.length][0], y: fallback[index % fallback.length][1] }));
 
-  const display = events.map((event, index) => isValidCoordinate(event) ? displayCoordinate(event, index, valid) : null);
+  const display = events.map((event, index) => isValidCoordinate(event) ? (clusterView ? displayCoordinate(event, index, valid) : { lat: event.lat, lng: event.lng }) : null);
   const usable = display.filter(Boolean);
   const latMin = Math.min(...usable.map((event) => event.lat));
   const latMax = Math.max(...usable.map((event) => event.lat));
@@ -572,13 +578,8 @@ function Recent({ events, page, setPage, onShowMap }) {
 }
 
 function RightRail({ events, onShowMap, verifiedAlerts = new Set(), onVerifyAlert }) {
-  const roads = Object.entries(events.reduce((acc, event) => {
-    acc[event.road] = (acc[event.road] || 0) + 1;
-    return acc;
-  }, {})).sort((a, b) => b[1] - a[1]).slice(0, 5);
-  const max = Math.max(1, ...roads.map(([, count]) => count));
   const alerts = events.filter((event) => ["medium", "high"].includes(event.severity) && !verifiedAlerts.has(alertKey(event))).slice(0, 3);
-  return <aside className="right-rail"><section className="panel worst"><h3>WORST AFFECTED ROADS</h3>{roads.map(([road, count], i)=><p key={road}><span>{i+1}</span>{road}<i><b className={i < 2 ? "red" : i < 3 ? "orange" : "green"} style={{width:`${Math.max(18, (count / max) * 128)}px`}}/></i><em>{count}</em></p>)}</section><section className="panel alerts"><h3>ALERTS <a>Unverified</a></h3>{alerts.length ? alerts.map((event) => <AlertCard event={event} key={event.event_id} onShowMap={onShowMap} onVerify={onVerifyAlert} compact />) : <div className="empty compact">No unverified medium or high alerts.</div>}</section></aside>;
+  return <aside className="right-rail"><section className="panel alerts"><h3>ALERTS <a>Unverified</a></h3>{alerts.length ? alerts.map((event) => <AlertCard event={event} key={`${event.event_id}-${event.timestamp_ms}`} onShowMap={onShowMap} onVerify={onVerifyAlert} compact />) : <div className="empty compact">No unverified medium or high alerts.</div>}</section></aside>;
 }
 
 function ReportsView({ events, metrics }) {
@@ -596,9 +597,10 @@ function ReportsView({ events, metrics }) {
 }
 
 function AnalyticsView({ events, metrics }) {
-  const hourly = hourlyCounts(events);
+  const halfHourly = halfHourCounts(events);
+  const maxBucket = Math.max(...halfHourly.map((bucket) => bucket.count), 1);
   return <section className="view-grid analytics-view">
-    <section className="panel analytics-panel"><h3>EVENTS BY HOUR</h3><div className="hour-chart">{hourly.map((item) => <span key={item.hour} title={`${item.hour}:00 - ${item.count} events`} style={{ height: `${Math.max(8, percent(item.count, Math.max(...hourly.map((h) => h.count), 1)))}%` }} />)}</div></section>
+    <section className="panel analytics-panel"><h3>EVENTS BY 30 MINUTES</h3><div className="hour-chart half-hour-chart">{halfHourly.map((item) => <span key={item.label} title={`${item.label} - ${item.count} events`} style={{ height: `${Math.max(8, percent(item.count, maxBucket))}%` }} />)}</div></section>
     <section className="panel analytics-panel"><h3>LIVE ANALYTICS</h3><div className="summary-list"><p>Average peak G <b>{avg(events.map((e) => e.peak_g)).toFixed(2)} G</b></p><p>Average magnitude <b>{avg(events.map((e) => e.magnitude_g)).toFixed(2)}</b></p><p>Critical ratio <b>{percent(metrics.high, metrics.total)}%</b></p><p>Events analyzed <b>{events.length.toLocaleString()}</b></p></div></section>
     <section className="panel analytics-panel wide"><h3>RECENT HIGH IMPACT EVENTS</h3><MiniEventList events={events.filter((event) => event.severity === "high").slice(0, 8)} /></section>
   </section>;
@@ -607,14 +609,11 @@ function AnalyticsView({ events, metrics }) {
 function DevicesView({ events }) {
   const devices = Object.values(events.reduce((acc, event) => {
     const id = event.device_id || "ESP32";
-    acc[id] ||= { id, total: 0, high: 0, latest: 0, peak: 0 };
-    acc[id].total += 1;
-    acc[id].high += event.severity === "high" ? 1 : 0;
+    acc[id] ||= { id, latest: 0 };
     acc[id].latest = Math.max(acc[id].latest, event.timestamp_ms || 0);
-    acc[id].peak = Math.max(acc[id].peak, event.peak_g || 0);
     return acc;
-  }, {})).sort((a, b) => b.total - a.total);
-  return <section className="view-grid devices-view">{devices.map((device) => <article className="panel device-card" key={device.id}><div><CircuitBoard/><h3>{device.id}</h3></div><p>Status <b>Online</b></p><p>Total events <b>{device.total}</b></p><p>High alerts <b>{device.high}</b></p><p>Peak impact <b>{device.peak.toFixed(2)} G</b></p><p>Last seen <b>{formatTime(device.latest)}</b></p></article>)}</section>;
+  }, {})).sort((a, b) => String(a.id).localeCompare(String(b.id)));
+  return <section className="view-grid devices-view">{devices.map((device) => <article className="panel device-card" key={device.id}><div><CircuitBoard/><h3>{device.id}</h3></div><p>Status <b>Online</b></p><p>Last heartbeat <b>{formatTime(device.latest)}</b></p></article>)}</section>;
 }
 
 function AlertsView({ events, onShowMap, verifiedAlerts = new Set(), onVerifyAlert }) {
@@ -623,12 +622,30 @@ function AlertsView({ events, onShowMap, verifiedAlerts = new Set(), onVerifyAle
 }
 
 function SettingsView({ refreshMs, setRefreshMs, themeMode, setThemeMode, setActiveView }) {
-  return <section className="view-grid single"><section className="panel settings-view"><h3>DASHBOARD SETTINGS</h3><div className="settings-grid">
-    <label>Refresh interval<select value={refreshMs} onChange={(event) => setRefreshMs(Number(event.target.value))}><option value={3000}>3 seconds</option><option value={5000}>5 seconds</option><option value={10000}>10 seconds</option><option value={30000}>30 seconds</option><option value={60000}>1 minute</option></select></label>
-    <label>Theme<select value={themeMode} onChange={(event) => setThemeMode(event.target.value)}><option value="dark">Dark</option><option value="light">Light</option><option value="system">As per system</option></select></label>
-    <p>Backend <b>Configured internally</b></p>
-    <p>Map mode <b>Mappls with built-in fallback</b></p>
-  </div><button className="export" onClick={() => setActiveView("dashboard")}>Back to dashboard</button></section></section>;
+  return <section className="view-grid single"><section className="panel settings-view">
+    <h3>DASHBOARD SETTINGS</h3>
+    <div className="settings-grid">
+      <section className="setting-card">
+        <h4>Appearance</h4>
+        <div className="choice-row">
+          <button className={themeMode === "dark" ? "active" : ""} onClick={() => setThemeMode("dark")}>Dark</button>
+          <button className={themeMode === "light" ? "active" : ""} onClick={() => setThemeMode("light")}>Light</button>
+        </div>
+      </section>
+      <section className="setting-card">
+        <h4>Data</h4>
+        <div className="choice-row">
+          <button className={refreshMs === 3000 ? "active" : ""} onClick={() => setRefreshMs(3000)}>3 sec</button>
+          <button className={refreshMs === 10000 ? "active" : ""} onClick={() => setRefreshMs(10000)}>10 sec</button>
+          <button className={refreshMs === 15000 ? "active" : ""} onClick={() => setRefreshMs(15000)}>15 sec</button>
+        </div>
+      </section>
+      <section className="setting-card about-card">
+        <h4>About</h4>
+        <p>RoadPulse monitors pothole events from ESP32 LTE devices and shows live road safety data on AWS.</p>
+      </section>
+    </div>
+  </section></section>;
 }
 
 function MiniEventList({ events }) {
@@ -657,7 +674,7 @@ function MapLinks({ event, onShowMap }) {
   const mapsUrl = hasGps ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.lat},${event.lng}`)}` : "";
   return <div className="map-links">
     <button disabled={!hasGps} onClick={() => onShowMap?.(event)}>{hasGps ? "Show on map" : "No GPS"}</button>
-    {hasGps && <a href={mapsUrl} target="_blank" rel="noreferrer">Open maps</a>}
+    {hasGps && <a className="map-button" href={mapsUrl} target="_blank" rel="noreferrer">Open in Maps</a>}
   </div>;
 }
 
@@ -669,10 +686,18 @@ function bucketByPeak(events) {
   ];
 }
 
-function hourlyCounts(events) {
-  const counts = Array.from({ length: 24 }, (_, hour) => ({ hour, count: 0 }));
+function halfHourCounts(events) {
+  const counts = Array.from({ length: 48 }, (_, index) => {
+    const hour = Math.floor(index / 2);
+    const minute = index % 2 === 0 ? "00" : "30";
+    return { label: `${String(hour).padStart(2, "0")}:${minute}`, count: 0 };
+  });
   events.forEach((event) => {
-    if (event.timestamp_ms) counts[new Date(event.timestamp_ms).getHours()].count += 1;
+    if (event.timestamp_ms) {
+      const date = new Date(event.timestamp_ms);
+      const index = (date.getHours() * 2) + (date.getMinutes() >= 30 ? 1 : 0);
+      counts[index].count += 1;
+    }
   });
   return counts;
 }
